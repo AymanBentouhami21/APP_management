@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    align-items: top; /* Changed to "top" */
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.div1 {
+    display: inline-block; /* Set to inline-block to adjust to the content width */
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    
+}
+
+.div1 h1 {
+    display: inline-block; /* Set to inline-block to adjust to the content width */
+    background-color: rgb(0, 127, 238);
+    padding: 10px;
+    margin: 0; /* Remove default margin from h1 */
+}
+
+.div_splitter {
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    display: flex; /* Set display to flex for horizontal stacking */
+    justify-content: space-between; /* Adjust as needed for spacing */
+}
+
+
+
+
+.div_options{
+    width: 20%;
+    background-color: blue;
+    display: flex;
+    justify-content: center;  /* Center children horizontally */
+    align-items: center;
+    
+}
+.button_container {
+    width : 50%;
+    height:70%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.div_insert{
+    width: 40%;
+    background-color: rgb(42, 165, 63);
+}
+
+.div_display{
+    width: 30%;
+    background-color: rgb(165, 42, 42);
+}
+
+.button_options{
+    height:30%;
+    margin: 2%;
+}
+
+.button_options img {
+    width: 80%; /* Set your desired width */
+    height: auto /* Maintain aspect ratio */
+}
