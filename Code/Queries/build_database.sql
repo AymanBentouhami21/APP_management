@@ -3,42 +3,63 @@ CREATE DATABASE DATA_BASE;
 USE DATA_BASE;
 
 create table CLIENTE (
-    IDCli int primary key IDENTITY,
+    IDCli int IDENTITY,
     NomCli varchar(50),
     AdrCli VARCHAR(50),
     VilleCli varchar(50)
     );
+alter TABLE cliente
+add CONSTRAINT PK_cliente primary key (IDCli)
 
 create table  CATEGORIE (
-    IDCat int primary key IDENTITY,
+    IDCat int IDENTITY,
     libCat varchar(50),
     TarifMO decimal(2,2)
     ) ;
+alter table CATEGORIE
+add CONSTRAINT PK_categorie PRIMARY key (IDCat)
 
 CREATE table APPAREIL (
-    IDApp int primary key IDENTITY,
+    IDApp int IDENTITY,
     DescApp VARCHAR(100),
     RefConstApp VARCHAR(100),
     MarqueApp varchar(100),
-    IDCli int FOREIGN key REFERENCES CLIENTE(IDCli),
-    IDCat int FOREIGN key REFERENCES CATEGORIE(IDCat)
+    IDCli int,
+    IDCat int
     )
+alter table APPAREIL
+add CONSTRAINT PK_appareil primary key(IDApp)
+
     
 CREATE TABLE PIECE (
-    IDPiece int primary key IDENTITY,
+    IDPiece int IDENTITY,
     DescPiece VARCHAR(100),
     PUHT FLOAT
     ) 
+alter table PIECE
+add CONSTRAINT PK_piece primary key(IDPiece)
 
 CREATE TABLE ORDREREPARATION (
-    IDOrdre int primary key IDENTITY,
+    IDOrdre int IDENTITY,
     DiagnosticPanne varchar(100),
     NbHeuresMO FLOAT,
-    IDApp int FOREIGN key REFERENCES APPAREIL(IDApp)
+    IDApp int
     )   
+alter table ORDREREPARATION
+add CONSTRAINT pk_ordrereparation PRIMARY key(IDOrdre)
 
 CREATE TABLE  PIECESACHANGER (
-    IDPiece int primary key IDENTITY,
-    IDOrdre int FOREIGN key REFERENCES ORDREREPARATION(IDOrdre) ,
-    Quantité int )
+    IDPiece int IDENTITY,
+    IDOrdre int ,
+    Quantité int 
+    )
+alter table PIECESACHANGER
+add CONSTRAINT PK_PIECESACHANGER PRIMARY KEY(IDPiece);
+
+alter table PIECESACHANGER
+add constraint fk_pieceachanger_ordrereparation 
+FOREIGN key (IDOrdre) 
+REFERENCES ORDREREPARATION(IDOrdre)
+
+
 

@@ -8,3 +8,6 @@ insert into PIECE(DescPiece, PUHT) VALUES('Ecran 20 pouces', 2000)
 insert into PIECE(DescPiece, PUHT) VALUES('Cable', 20)
 insert into PIECE(DescPiece, PUHT) VALUES('Clavier', 700)
 
+
+ALTER table Ordrereparation
+drop CONSTRAINT

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
     <title>Simple HTML Template</title>
 </head>
     <body>
+        <script src="../static/index.js"></script>
         <div class="div1">
             <h1>
                 App de Management
@@ -12,19 +13,22 @@
             <div class="div_splitter">
                 <div class="div_options">
                     <div class="button_container">
-                        <button class="button_options" >
-                            <img src="Icons/add.png",alt="AddIcon">
-                        </button>
                         <button class="button_options">
-                            <img src="Icons/editing.png",alt="UpdateIcon">
+                            <img src="{{ url_for('static', filename='Icons/add.png') }}" alt="AddIcon">
                         </button>
+                        
                         <button class="button_options">
-                            <img src="Icons/magnifier.png",alt="SearchIcon">
+                            <img src="{{ url_for('static', filename='Icons/editing.png') }}" alt="UpdateIcon">
+                        </button>
+                        
+                        <button class="button_options">
+                            <img src="{{ url_for('static', filename='Icons/magnifier.png') }}" alt="SearchIcon">
                         </button>
                     </div>
                 </div>
                 <div class="div_insert"></div>
                 <div class="div_display"></div>
+                
             </div>
         </div>
     </body>

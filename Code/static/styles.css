@@ -54,6 +54,8 @@ body {
 .div_insert{
     width: 40%;
     background-color: rgb(42, 165, 63);
+    margin:5%;
+    padding: 5%;
 }
 
 .div_display{
