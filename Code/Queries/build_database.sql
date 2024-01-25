@@ -15,7 +15,7 @@ create table  CATEGORIE (
     IDCat int IDENTITY,
     libCat varchar(50),
     TarifMO decimal(2,2)
-    ) ;
+    );
 alter table CATEGORIE
 add CONSTRAINT PK_categorie PRIMARY key (IDCat)
 
@@ -60,6 +60,14 @@ alter table PIECESACHANGER
 add constraint fk_pieceachanger_ordrereparation 
 FOREIGN key (IDOrdre) 
 REFERENCES ORDREREPARATION(IDOrdre)
+
+
+CREATE TABlE Facture (
+    IDFacture int identity,
+    IDOrdre int,
+    
+
+)
 
 
 
